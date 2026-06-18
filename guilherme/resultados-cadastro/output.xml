@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-18T12:11:54.640458" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastro Medicamento" source="C:\Users\guilh\Downloads\api\cadastro\cadastro_medicamento.robot">
+<kw name="Dado que o usuario acessa a tela de cadastro de medicamentos" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:54.957356" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/medicamentos/novo'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T12:11:54.957030" elapsed="1.778091"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T12:11:56.736089" elapsed="0.047785"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:54.956280" elapsed="1.828086"/>
+</kw>
+<test id="s1-t1" name="CT-01-UI - Deve cadastrar medicamento com todos os campos validos" line="17">
+<kw name="Dado que o usuario informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:56.788837" level="INFO">Typing text 'Losartana' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:56.787869" elapsed="0.216381"/>
+</kw>
+<arg>Losartana</arg>
+<status status="PASS" start="2026-06-18T12:11:56.787077" elapsed="0.217708"/>
+</kw>
+<kw name="E informa a dosagem">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.006940" level="INFO">Typing text '50 mg' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.006396" elapsed="0.159605"/>
+</kw>
+<arg>50 mg</arg>
+<status status="PASS" start="2026-06-18T12:11:57.005604" elapsed="0.160543"/>
+</kw>
+<kw name="E informa o horario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.168003" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>${horario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.167407" elapsed="0.130937"/>
+</kw>
+<arg>08:00</arg>
+<status status="PASS" start="2026-06-18T12:11:57.166759" elapsed="0.132090"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.301962" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.301023" elapsed="0.119021"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:57.300054" elapsed="0.120231"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.422067" level="INFO">Verifying element 'id=mensagem' contains exact text 'Medicamento cadastrado com sucesso'.</msg>
+<arg>${LOCATOR_MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.421509" elapsed="0.036420"/>
+</kw>
+<arg>Medicamento cadastrado com sucesso</arg>
+<status status="PASS" start="2026-06-18T12:11:57.420925" elapsed="0.037265"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:56.784780" elapsed="0.674075"/>
+</test>
+<test id="s1-t2" name="CT-02-UI - Deve validar nome obrigatorio" line="24">
+<kw name="Dado que o usuario informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.463878" level="INFO">Typing text '' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.462856" elapsed="0.116874"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:57.461063" elapsed="0.118929"/>
+</kw>
+<kw name="E informa a dosagem">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.581821" level="INFO">Typing text '50 mg' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.581308" elapsed="0.072322"/>
+</kw>
+<arg>50 mg</arg>
+<status status="PASS" start="2026-06-18T12:11:57.580679" elapsed="0.073139"/>
+</kw>
+<kw name="E informa o horario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.655299" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>${horario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.654851" elapsed="0.090750"/>
+</kw>
+<arg>08:00</arg>
+<status status="PASS" start="2026-06-18T12:11:57.654292" elapsed="0.091503"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.747128" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.746728" elapsed="0.060283"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:57.746270" elapsed="0.060941"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.809094" level="INFO">Verifying element 'id=mensagem' contains exact text 'Nome e obrigatorio'.</msg>
+<arg>${LOCATOR_MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.808487" elapsed="0.013487"/>
+</kw>
+<arg>Nome e obrigatorio</arg>
+<status status="PASS" start="2026-06-18T12:11:57.807855" elapsed="0.014371"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:57.459981" elapsed="0.362860"/>
+</test>
+<test id="s1-t3" name="CT-03-UI - Deve validar dosagem obrigatoria" line="31">
+<kw name="Dado que o usuario informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.825906" level="INFO">Typing text 'Losartana' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.825237" elapsed="0.057422"/>
+</kw>
+<arg>Losartana</arg>
+<status status="PASS" start="2026-06-18T12:11:57.824507" elapsed="0.058420"/>
+</kw>
+<kw name="E informa a dosagem">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.885306" level="INFO">Typing text '' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.884848" elapsed="0.055619"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:57.883561" elapsed="0.057106"/>
+</kw>
+<kw name="E informa o horario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:57.942028" level="INFO">Typing text '08:00' into text field 'id=horario'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>${horario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:57.941635" elapsed="0.061409"/>
+</kw>
+<arg>08:00</arg>
+<status status="PASS" start="2026-06-18T12:11:57.941149" elapsed="0.062103"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.004660" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.004216" elapsed="0.043616"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:58.003754" elapsed="0.044265"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.049574" level="INFO">Verifying element 'id=mensagem' contains exact text 'Dosagem e obrigatoria'.</msg>
+<arg>${LOCATOR_MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.049156" elapsed="0.012325"/>
+</kw>
+<arg>Dosagem e obrigatoria</arg>
+<status status="PASS" start="2026-06-18T12:11:58.048703" elapsed="0.012961"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:57.823657" elapsed="0.238372"/>
+</test>
+<test id="s1-t4" name="CT-04-UI - Deve validar horario obrigatorio" line="38">
+<kw name="Dado que o usuario informa o nome">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.064909" level="INFO">Typing text 'Losartana' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.064405" elapsed="0.064333"/>
+</kw>
+<arg>Losartana</arg>
+<status status="PASS" start="2026-06-18T12:11:58.063710" elapsed="0.065258"/>
+</kw>
+<kw name="E informa a dosagem">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.130430" level="INFO">Typing text '50 mg' into text field 'id=dosagem'.</msg>
+<arg>${INPUT_DOSAGEM}</arg>
+<arg>${dosagem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.129944" elapsed="0.050646"/>
+</kw>
+<arg>50 mg</arg>
+<status status="PASS" start="2026-06-18T12:11:58.129431" elapsed="0.051360"/>
+</kw>
+<kw name="E informa o horario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.182763" level="INFO">Typing text '' into text field 'id=horario'.</msg>
+<arg>${INPUT_HORARIO}</arg>
+<arg>${horario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.182277" elapsed="0.053084"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:58.181432" elapsed="0.054125"/>
+</kw>
+<kw name="Quando solicitar o cadastro">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.236894" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.236517" elapsed="0.047202"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:58.236029" elapsed="0.048442"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:11:58.298189" level="INFO">Verifying element 'id=mensagem' contains exact text 'Horario e obrigatorio'.</msg>
+<arg>${LOCATOR_MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.297695" elapsed="0.017489"/>
+</kw>
+<arg>Horario e obrigatorio</arg>
+<status status="PASS" start="2026-06-18T12:11:58.296999" elapsed="0.018454"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:58.062938" elapsed="0.270233"/>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T12:11:58.392084" elapsed="2.435359"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:58.386590" elapsed="2.441147"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:11:54.642669" elapsed="6.185172"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cadastro Medicamento" id="s1" pass="4" fail="0" skip="0">Cadastro Medicamento</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
