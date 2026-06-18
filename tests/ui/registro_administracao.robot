@@ -1,14 +1,10 @@
-# Implementação — Robot Framework — Registro de Administração
 
-## Rastreabilidade
 - Modelagem: [Isaac-Modelagem-UI-Registro-de-Administração](Isaac-Modelagem-UI-Registro-de-Administração)
 
-## Arquivo de Script
 `tests/ui/registro_administracao.robot`
 
 ---
 
-## Suite de Teste
 
 ​```robot
 *** Settings ***
@@ -77,7 +73,6 @@ E fecha o navegador
 
 ---
 
-## Comando de Execução
 
 ​```bash
 robot tests/ui/registro_administracao.robot
