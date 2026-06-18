@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.6 on win32)" generated="2026-06-18T12:15:32.649790" rpa="false" schemaversion="5">
+<suite id="s1" name="Remocao Medicamento" source="C:\Users\guilh\Downloads\api\remocao\remocao_medicamento.robot">
+<kw name="Dado que o usuario acessa a lista de medicamentos" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:33.015603" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/medicamentos'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T12:15:33.015254" elapsed="1.819261"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T12:15:34.834919" elapsed="0.046927"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:33.014463" elapsed="1.867575"/>
+</kw>
+<test id="s1-t1" name="CT-11-R1 - Deve remover medicamento com confirmacao" line="17">
+<kw name="Dado que existe um medicamento na lista">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:34.962388" level="INFO">Element 'id=listaMedicamentos' contains text 'Losartana 50mg'.</msg>
+<arg>${LISTA}</arg>
+<arg>${nome}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:34.884123" elapsed="0.078504"/>
+</kw>
+<arg>Losartana 50mg</arg>
+<status status="PASS" start="2026-06-18T12:15:34.883327" elapsed="0.079547"/>
+</kw>
+<kw name="Quando o usuario clicar em remover">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:34.964852" level="INFO">Clicking button 'id=btnRemover'.</msg>
+<arg>${BOTAO_REMOVER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:15:34.964283" elapsed="0.205810"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:34.963651" elapsed="0.206680"/>
+</kw>
+<kw name="E confirmar a remocao">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.172029" level="INFO">Clicking button 'id=btnConfirmar'.</msg>
+<arg>${BOTAO_CONFIRMAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.171544" elapsed="0.156514"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.171017" elapsed="0.157366"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.331001" level="INFO">Verifying element 'id=mensagem' contains exact text 'Medicamento removido com sucesso'.</msg>
+<arg>${LOCATOR_MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.330137" elapsed="0.036991"/>
+</kw>
+<arg>Medicamento removido com sucesso</arg>
+<status status="PASS" start="2026-06-18T12:15:35.329262" elapsed="0.038119"/>
+</kw>
+<kw name="E o medicamento nao deve estar na lista">
+<kw name="Element Should Not Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.394194" level="INFO">Element 'id=listaMedicamentos' does not contain text 'Losartana 50mg'.</msg>
+<arg>${LISTA}</arg>
+<arg>${nome}</arg>
+<doc>Verifies that element ``locator`` does not contain text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.368582" elapsed="0.025800"/>
+</kw>
+<arg>Losartana 50mg</arg>
+<status status="PASS" start="2026-06-18T12:15:35.367984" elapsed="0.026602"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:34.882156" elapsed="0.512928"/>
+</test>
+<test id="s1-t2" name="CT-11-R2 - Deve manter medicamento ao cancelar remocao" line="24">
+<kw name="Dado que existe um medicamento na lista">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.422587" level="INFO">Element 'id=listaMedicamentos' contains text 'Atenolol 25mg'.</msg>
+<arg>${LISTA}</arg>
+<arg>${nome}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.397540" elapsed="0.025249"/>
+</kw>
+<arg>Atenolol 25mg</arg>
+<status status="PASS" start="2026-06-18T12:15:35.397003" elapsed="0.025996"/>
+</kw>
+<kw name="Quando o usuario clicar em remover">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.424582" level="INFO">Clicking button 'id=btnRemover'.</msg>
+<arg>${BOTAO_REMOVER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.424115" elapsed="0.098656"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.423590" elapsed="0.099364"/>
+</kw>
+<kw name="E cancelar a remocao">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.524233" level="INFO">Clicking button 'id=btnCancelar'.</msg>
+<arg>${BOTAO_CANCELAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.523855" elapsed="0.061184"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.523447" elapsed="0.061774"/>
+</kw>
+<kw name="Entao o medicamento deve permanecer na lista">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.597706" level="INFO">Element 'id=listaMedicamentos' contains text 'Atenolol 25mg'.</msg>
+<arg>${LISTA}</arg>
+<arg>${nome}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.586150" elapsed="0.011700"/>
+</kw>
+<arg>Atenolol 25mg</arg>
+<status status="PASS" start="2026-06-18T12:15:35.585685" elapsed="0.012321"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.396023" elapsed="0.202518"/>
+</test>
+<test id="s1-t3" name="CT-11-R3 - Deve manter medicamento ao fechar modal sem confirmar" line="30">
+<kw name="Dado que existe um medicamento na lista">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.612837" level="INFO">Element 'id=listaMedicamentos' contains text 'Metformina 500mg'.</msg>
+<arg>${LISTA}</arg>
+<arg>${nome}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.600980" elapsed="0.012065"/>
+</kw>
+<arg>Metformina 500mg</arg>
+<status status="PASS" start="2026-06-18T12:15:35.600378" elapsed="0.012894"/>
+</kw>
+<kw name="Quando o usuario clicar em remover">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.614670" level="INFO">Clicking button 'id=btnRemover'.</msg>
+<arg>${BOTAO_REMOVER}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.614310" elapsed="0.057019"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.613869" elapsed="0.057654"/>
+</kw>
+<kw name="E fechar o modal sem confirmar">
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.672822" level="INFO">Sending key(s) ('ESCAPE',) to page.</msg>
+<msg time="2026-06-18T12:15:35.672983" level="INFO">Pressing special key ESCAPE to browser.</msg>
+<msg time="2026-06-18T12:15:35.673069" level="INFO">Releasing special key ESCAPE.</msg>
+<arg>NONE</arg>
+<arg>ESCAPE</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.672436" elapsed="0.006364"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.672000" elapsed="0.007041"/>
+</kw>
+<kw name="Entao o medicamento deve permanecer na lista">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.694928" level="INFO">Element 'id=listaMedicamentos' contains text 'Metformina 500mg'.</msg>
+<arg>${LISTA}</arg>
+<arg>${nome}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.679981" elapsed="0.015104"/>
+</kw>
+<arg>Metformina 500mg</arg>
+<status status="PASS" start="2026-06-18T12:15:35.679495" elapsed="0.015791"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.599295" elapsed="0.096407"/>
+</test>
+<test id="s1-t4" name="CT-11-R4 - Deve exibir erro ao tentar remover medicamento inexistente" line="36">
+<kw name="Quando o usuario tentar remover medicamento com id">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.698058" level="INFO">Executing JavaScript:
+removerMedicamento('med999')
+Without any arguments.</msg>
+<arg>removerMedicamento('${id}')</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.697671" elapsed="0.006010"/>
+</kw>
+<arg>med999</arg>
+<status status="PASS" start="2026-06-18T12:15:35.697170" elapsed="0.006719"/>
+</kw>
+<kw name="Entao o sistema deve apresentar a mensagem">
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T12:15:35.705578" level="INFO">Verifying element 'id=mensagem' contains exact text 'Medicamento nao encontrado'.</msg>
+<arg>${LOCATOR_MENSAGEM}</arg>
+<arg>${mensagem}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.705009" elapsed="0.014313"/>
+</kw>
+<arg>Medicamento nao encontrado</arg>
+<status status="PASS" start="2026-06-18T12:15:35.704425" elapsed="0.015097"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.696407" elapsed="0.023733"/>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T12:15:35.723424" elapsed="2.132940"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:35.723026" elapsed="2.133474"/>
+</kw>
+<status status="PASS" start="2026-06-18T12:15:32.651755" elapsed="5.204785"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Remocao Medicamento" id="s1" pass="4" fail="0" skip="0">Remocao Medicamento</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
