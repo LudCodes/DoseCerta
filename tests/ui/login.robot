@@ -1,14 +1,11 @@
-# Implementação — Robot Framework — Login
 
-## Rastreabilidade
 - Modelagem: [Isaac-Modelagem-UI-Login](Isaac-Modelagem-UI-Login)
 
-## Arquivo de Script
 `tests/ui/login.robot`
 
 ---
 
-## Suite de Teste
+
 
 ​```robot
 *** Settings ***
@@ -80,7 +77,6 @@ E fecha o navegador
 
 ---
 
-## Comando de Execução
 
 ​```bash
 robot tests/ui/login.robot
